@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Minul Alam | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <i id="theme-icon" class="fas fa-sun"></i>
+  </button>
+
+  <header id="home">
+    <div class="container">
+      <h1>Md Minul Alam</h1>
+      <p>Ph.D. Candidate · AI for Healthcare · Embedded Systems</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I am a Ph.D. candidate at UNLV researching smart wearable systems and embedded AI for early disease detection.</p>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education</h2>
+      <ul>
+        <li>Ph.D. in Electrical Engineering, UNLV (Expected 2026)</li>
+        <li>M.Eng. in Electrical Engineering, Arkansas Tech University (2023)</li>
+        <li>B.Sc. in ETE, North South University (2016)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>Experience</h2>
+      <p>Graduate Teaching Assistant & Researcher at UNLV</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <ul>
+        <li>Smart Wearable Gait Monitoring System</li>
+        <li>ROS-based Autonomous Robot</li>
+        <li>AI for Early Alzheimer’s Diagnosis</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:alamm1@unlv.nevada.edu">alamm1@unlv.nevada.edu</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Md Minul Alam</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const icon = document.getElementById('theme-icon');
+      body.classList.toggle('dark-mode');
+      const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+    window.onload = () => {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('theme-icon').className = 'fas fa-moon';
+      }
+    };
+  </script>
+</body>
+</html>
